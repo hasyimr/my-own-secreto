@@ -8,8 +8,20 @@
 </head>
 <body>
     <form action="{{url_for('home')}}" method="post">
+        {{ form.csrf_token }}
         {{form.user_message(class_="form-input")}}
         {{form.submit}}
     </form>
+
+    <section class="container">
+
+        {% for item in database: %}
+        <div class="message-card">
+            <p>{{item.message}}</p>
+        </div>
+        {% endfor %}
+
+    </section>
+
 </body>
 </html>

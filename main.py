@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for, request, redirect
 from flask_wtf import FlaskForm
 from wtforms import BooleanField, StringField, validators, SubmitField
 from wtforms.validators import DataRequired
@@ -22,7 +22,7 @@ class MessageForm(FlaskForm):
     user_message = StringField('Your Message for Me', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
-
+db.create_all()
 
 @app.route("/", methods=["POST", "GET"])
 def home():
@@ -34,7 +34,7 @@ def home():
         db.session.add(messages)
         db.session.commit()
 
-        return render_template("index.html", form=form, database=database)
+        return redirect(url_for('home'))
 
     return render_template("index.html", form=form, database=database)
 
