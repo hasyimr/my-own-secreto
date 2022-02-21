@@ -4,23 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
     <title>Document</title>
 </head>
 <body>
-    <form action="{{url_for('home')}}" method="post">
-        {{ form.csrf_token }}
-        {{form.user_message(class_="form-input")}}
-        {{form.submit}}
-    </form>
+    <div class="hero-container">
+        <div class="hero-text">
+            <h1>Tell <span>Hasyim</span> everything you always wanted to tell him</h1>
+            <p class="subtitle">Psst...he can't see you 🙈</p>
+        </div>
+
+        <form action="{{url_for('home')}}" method="post">
+            {{ form.csrf_token }}
+            {{form.user_message(class_="form-input", placeholder="Write a secret message....(ISTG i can't see the sender)")}}
+            {{form.submit(class_="submit-button")}}
+        </form>
+    </div>
+
+
 
     <section class="container">
-
+        <h2>Messages for Hasyim</h2>
         {% for item in database: %}
         <div class="message-card">
             <p>{{item.message}}</p>
         </div>
         {% endfor %}
-
+        <p class="footer-text">Made by Hasyim Rahmadi</p>
     </section>
 
 </body>

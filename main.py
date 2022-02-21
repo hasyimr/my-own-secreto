@@ -1,10 +1,8 @@
 from flask import Flask, render_template, url_for, request, redirect
 from flask_wtf import FlaskForm
-from wtforms import BooleanField, StringField, validators, SubmitField
+from wtforms import BooleanField, StringField, validators, SubmitField, TextAreaField
 from wtforms.validators import DataRequired
 from flask_sqlalchemy import SQLAlchemy
-from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
 import requests
 
 app = Flask(__name__)
@@ -19,14 +17,15 @@ class Comments(db.Model):
 
 class MessageForm(FlaskForm):
 
-    user_message = StringField('Your Message for Me', validators=[DataRequired()])
-    submit = SubmitField('Submit')
+    user_message = TextAreaField('Your Message for Me', validators=[DataRequired()])
+    submit = SubmitField('Send')
 
 db.create_all()
 
 @app.route("/", methods=["POST", "GET"])
 def home():
-    database = Comments.query.all()
+    # database = Comments.query.all()
+    database = Comments.query.order_by(Comments.id).all()
     form = MessageForm()
 
     if form.validate_on_submit():

@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Poppins:wght@400;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    width: 100%;
+    background-color: #FFF9FB;
+}
+
+.hero-container {
+    text-align: center;
+    margin-inline: 2em;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Caveat', cursive;
+    font-size: 2em;
+
+    color: #F2789F;
+    /* -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: #FF004E; */
+    margin-bottom: 1em;
+
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: .8em;
+}
+
+span {
+    color: white;
+    -webkit-text-stroke-width: .3px;
+    -webkit-text-stroke-color: #FF004E;
+}
+
+.subtitle {
+    color: #F2789F;
+    opacity: 71%;
+    margin-bottom: 2em;
+}
+
+.form-input {
+    font-family: 'Poppins', sans-serif;
+    font-size: .8em;
+    padding-bottom: 5em;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    display: block;
+    width: 97%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 3px 4px #c5c5c5;
+    margin-bottom: 1.3em;
+
+}
+
+.form-input:focus {
+    outline: none;
+    border: 1px solid #F2789F;
+
+}
+
+.form-input::placeholder {
+    font-family: 'Poppins', sans-serif;
+    font-size: .8em;
+    color: #fdc5d8;
+}
+
+.submit-button {
+    position: absolute;
+    right: 0;
+}
+
+form {
+    position: relative;
+    align-self: center;
+    width: 100%;
+}
+
+.submit-button {
+    background-color: #F2789F;
+    border: none;
+    padding-inline: 1em;
+    padding-block: .4em;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: .7em;
+}
+
+.container {
+    margin-top: 3em;
+    margin-inline: 2em;
+
+}
+
+h2 {
+    font-family: 'Caveat', cursive;
+    color: #F2789F;
+    font-size: 1em;
+}
+
+.message-card {
+    background-color: white;
+    box-shadow: 1px 3px 4px #d8d8d8;
+    margin-top: 1em;
+    padding-inline: 1em;
+    padding-block: .4em;
+    border-radius: 5px;
+}
+
+.message-card p {
+    font-size: .6em;
+}
+
+.footer-text {
+    text-align: center;
+    margin-top: 10em;
+    margin-bottom: 1em;
+    font-size: .5em;
+    color: #888888;
+}
