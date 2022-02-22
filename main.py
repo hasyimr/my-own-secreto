@@ -24,7 +24,7 @@ class MessageForm(FlaskForm):
     user_message = TextAreaField('Your Message for Me', validators=[DataRequired()])
     submit = SubmitField('Send')
 
-db.create_all()
+# db.create_all()
 
 @app.route("/", methods=["POST", "GET"])
 def home():
