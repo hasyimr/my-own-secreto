@@ -8,7 +8,7 @@ import os
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY")
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL").replace("postgres://", "postgresql://")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL").replace("postgres://", "postgresql://]")
 db = SQLAlchemy(app)
 
 
@@ -21,7 +21,7 @@ class MessageForm(FlaskForm):
     user_message = TextAreaField('Your Message for Me', validators=[DataRequired()])
     submit = SubmitField('Send')
 
-
+db.create_all()
 
 @app.route("/", methods=["POST", "GET"])
 def home():
