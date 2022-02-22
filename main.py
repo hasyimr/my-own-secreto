@@ -4,6 +4,7 @@ from wtforms import BooleanField, StringField, validators, SubmitField, TextArea
 from wtforms.validators import DataRequired
 from flask_sqlalchemy import SQLAlchemy
 import requests
+import psycopg2
 import os
 
 app = Flask(__name__)
