@@ -10,7 +10,7 @@ import os
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY")
 # app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL").replace("postgres://", "postgresql://]")
-DATABASE_URL = os.environ.get("DATABASE_URL").replace("postgres://", "postgresql://]")
+DATABASE_URL = os.environ.get("DATABASE_URL").replace("postgres://", "postgresql://")
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 db = SQLAlchemy(app)
 
