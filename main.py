@@ -26,6 +26,10 @@ db.create_all()
 def home():
     # database = Comments.query.all()
     database = Comments.query.order_by(Comments.id).all()
+    order_list = []
+    for i in range(len(database)):
+        order_list.append(i)
+    order_list.reverse()
     form = MessageForm()
 
     if form.validate_on_submit():
@@ -35,7 +39,7 @@ def home():
 
         return redirect(url_for('home'))
 
-    return render_template("index.html", form=form, database=database)
+    return render_template("index.html", form=form, database=database, len=order_list)
 
 if __name__ == "__main__":
     app.run(debug=True)

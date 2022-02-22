@@ -57,7 +57,7 @@ span {
     padding-left: 5px;
     padding-top: 5px;
     display: block;
-    width: 97%;
+    width: 98%;
     outline: none;
     border: none;
     border-radius: 5px;
@@ -98,6 +98,13 @@ form {
     color: white;
     font-family: 'Poppins', sans-serif;
     font-size: .7em;
+    transition: background-color 0.3s ease-in, transform 0.3s ease-in-out;
+}
+
+.submit-button:hover {
+    cursor: pointer;
+    transform: translateY(-3px);
+    background-color: #ee4a7e;
 }
 
 .container {
@@ -123,6 +130,7 @@ h2 {
 
 .message-card p {
     font-size: .6em;
+    color: rgb(70, 70, 70);
 }
 
 .footer-text {
@@ -131,4 +139,54 @@ h2 {
     margin-bottom: 1em;
     font-size: .5em;
     color: #888888;
+}
+
+@media only screen and (min-width: 500px) {
+    .container {
+        margin-inline: 4em;
+    }
+
+    .hero-container {
+        margin-inline: 4em;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .container {
+        margin-inline: 7em;
+    }
+
+    .hero-container {
+        margin-inline: 7em;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .container {
+        margin-inline: 11em;
+    }
+
+    .hero-container {
+        margin-inline: 11em;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .container {
+        margin-inline: 21em;
+    }
+
+    .hero-container {
+        margin-inline: 21em;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .container {
+        margin-inline: 28em;
+    }
+
+    .hero-container {
+        margin-inline: 28em;
+    }
 }

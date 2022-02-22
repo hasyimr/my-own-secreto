@@ -23,11 +23,22 @@
 
 
 
-    <section class="container">
+    <!-- <section class="container">
         <h2>Messages for Hasyim</h2>
         {% for item in database: %}
         <div class="message-card">
             <p>{{item.message}}</p>
+        </div>
+        {% endfor %}
+        <p class="footer-text">Made by Hasyim Rahmadi</p>
+    </section> -->
+
+    <section class="container">
+        <h2>Messages for Hasyim</h2>
+        {% for item in len: %}
+        
+        <div class="message-card">
+            <p>{{database[item].message}}</p>
         </div>
         {% endfor %}
         <p class="footer-text">Made by Hasyim Rahmadi</p>
