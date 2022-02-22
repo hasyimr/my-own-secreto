@@ -4,10 +4,11 @@ from wtforms import BooleanField, StringField, validators, SubmitField, TextArea
 from wtforms.validators import DataRequired
 from flask_sqlalchemy import SQLAlchemy
 import requests
+import os
 
 app = Flask(__name__)
-app.secret_key = "sad812734089"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///comments.db'
+app.secret_key = os.environ.get("SECRET_KEY")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 db = SQLAlchemy(app)
 
 
